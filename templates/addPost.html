@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Post | dailyRead.com{% endblock title %}
+
+{% block tabAddPost %}active-tab{% endblock tabAddPost %}
+
+{% block content %}
+
+<div class="add-post">
+
+    <form action="{% url 'addBlog' %}" method="post">
+    
+        {% csrf_token %}
+    
+        <label for="title">Title</label><br>
+        <input type="text" name="title" id="title">
+        
+        <br><br>
+    
+        <label for="category">Category</label><br>
+        <select name="category" id="category">
+            {% for category in categories %}
+            <option value="{{category.title}}">{{category.title}}</option>
+            {% endfor %}
+        </select>
+    
+        <br><br>
+    
+        <label for="content">Content</label><br>
+        <textarea name="content" id="content" cols="60" rows="30"></textarea>
+
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</div>
+
+{% endblock content %}

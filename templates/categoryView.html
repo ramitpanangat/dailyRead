@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block title %}{{title}} | dailyRead.com{% endblock title %}
+
+{% block content %}
+{% load static %}
+{% if categoryPost %}
+    <h2 class="category-title">{{title}}</h2>
+    {% for post in categoryPost %}
+        <div class="blog-list">
+            <h3><a href="{% url 'articleView' post.pk %}">{{ post.title }}</a></h3>
+            <small>{{ post.author.first_name }} {{post.author.last_name}} | {{ post.date }}</small>
+        </div>
+    {% endfor %}
+{% else %}
+<div class="no-data">
+    <h3>Sorry, no data found in this category.</h3>
+    <img src="{% static 'opps.png' %}" alt="Opps">
+</div>
+{% endif %}
+{% endblock content %}

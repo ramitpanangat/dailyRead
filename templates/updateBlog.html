@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block title %}Update | dailyRead.com{% endblock title %}
+
+{% block content %}
+
+<div class="add-post">
+
+    <form action="{% url 'updatePost' post.pk %}" method="post">
+    
+        {% csrf_token %}
+    
+        <label for="updateTitle">Title</label><br>
+        <input type="text" name="updateTitle" id="updateTitle" value="{{post.title}}">
+        
+        <br><br>
+    
+        <label for="updateCategory">Category</label><br>
+        <select name="updateCategory" id="updateCategory">
+            {% for category in categories %}
+                
+                {% if category == post.category %}
+
+                <option value="{{category.title}}" selected>{{category.title}}</option>
+
+                {% else %}
+
+                <option value="{{category.title}}">{{category.title}}</option>
+                    
+                {% endif %}
+                    
+            {% endfor %}
+        </select>
+    
+        <br><br>
+    
+        <label for="updateContent">Content</label><br>
+        <textarea name="updateContent" id="updateContent" cols="60" rows="30">{{post.content}}</textarea>
+
+        <br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</div>
+    
+{% endblock content %}
+    

@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ post.title }} | dailyRead.com{% endblock title %}
+
+{% block content %}
+
+<div class='article-container'>
+    <h3><a href="{% url 'categoryView' post.category %}">{{post.category}}</a></h3>
+    <h1>{{ post.title }}</h1>
+    <small>{{post.date}} | <a href="{% url 'userProfile' post.author %}">{{post.author.first_name}} {{post.author.last_name}}</a></small><br>
+    
+    {% if user == post.author %}
+    <small><a href="{% url 'updatePage' post.pk %}" class="article-btn">Edit</a> | <a href="{% url 'deletePage' post.pk %}" class="article-btn">Delete</a></small>    
+    {% endif %}
+        
+    <p>{{ post.content|safe|linebreaksbr }}</p>
+</div>
+
+{% endblock content %}

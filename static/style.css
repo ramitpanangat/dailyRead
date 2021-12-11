@@ -1,0 +1,368 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Helvetica, Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Navebar styling */
+header {
+    background-color: black;
+}
+
+#logo {
+    padding: 10px;
+}
+
+#logo a {
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    text-decoration: none;
+    position: relative;
+    transition: 0.8s ease;
+}
+
+#logo a:hover {
+    color: rgb(204, 204, 204);
+}
+
+/* Menu styling */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar ul {
+    display: flex;
+    margin: 0 10px;
+    padding: 15px 0;
+    transition: 0.8s ease;
+}
+
+.navbar ul li {
+    list-style: none;
+    padding: 5px 10px;
+    transition: 0.8s ease;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: grey;
+    transition: 0.8s ease;
+}
+
+.navbar ul li a:hover {
+    color: white;
+}
+
+.navbar .active-tab {
+    color: white;
+}
+
+.menu-icon {
+    display: none;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.navbar .menu-icon span {
+    display: block;
+    width: 20px;
+    height: 3px;
+    margin: 3px 0;
+    background: white;
+    transition: 0.8s ease-in-out;
+}
+
+
+/* List of blogs */
+
+.blog-list {
+    border: 0.5px solid black;
+    padding: 5px;
+    margin: 10px auto;
+    width: 80%;
+}
+
+.blog-list a {
+    text-decoration: none;
+    color: black;
+}
+
+.blog-list a:hover, .article-container a:hover {
+    color: grey;
+}
+
+.no-data {
+    width: 80%;
+    margin: 100px auto;
+    text-align: center;
+}
+
+.no-data img {
+    padding: 10px;
+}
+
+/* Article page styling */
+
+.article-container {
+    padding: 0 10px;
+    margin: 10px 50px;
+}
+
+.article-container h1 {
+    padding: 10px 0;
+}
+
+.article-container a {
+    text-decoration: 2px red underline;
+    color: black;
+}
+
+.article-container .article-btn {
+    text-decoration: none;
+    color: gray;
+}
+
+.article-container small a {
+    text-decoration: none;
+}
+
+.article-container .article-btn:hover {
+    text-decoration: none;
+    color: rgb(68, 67, 67);
+}
+
+.article-container p {
+    margin: 10px 0;
+}
+
+/* Category List page styling */
+
+.category-table {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.category-tile {
+    padding: 20px 0;
+    margin: 10px 0;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.category-tile a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    font-size: 25px;
+}
+
+.category-tile a:hover {
+    color: grey;
+}
+
+.category-title {
+    width: 80%;
+    margin: 10px auto;
+    font-size: 25px;
+}
+
+/* Log-In/Sign-Up Page styling */
+
+.signUpForm, .loginForm {
+    width: 50%;
+    margin: 30px auto;
+    padding: 15px;
+    border: 0.5px solid #888888;
+    box-shadow: 3px 7px 5px #888888;
+    border-radius: 20px;
+}
+
+.loginForm {
+    width: 30%;
+}
+
+.loginForm input[type='submit'] {
+    width: 90%;
+}
+
+.signUpForm input[type='submit'] {
+    width: 20%;
+}
+
+.signUpForm h3, .loginForm h3 {
+    margin: 5px 0;
+}
+
+#fname, #lname {
+    width: 45%;
+    padding: 3px;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+#username, #email, #password, #cpassword, #uname, #pword {
+    width: 90%;
+    padding: 3px;
+    margin: 5px 0;
+    font-size: 16px;
+}
+
+.submit {
+    margin: 5px 0;
+    padding: 5px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 0.5px solid black;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+}
+
+/* Add new post page styling */
+
+.add-post {
+    width: 70%;
+    margin: 20px auto;
+    padding: 10px;
+    clear: both;
+    border: 0.5px solid black;
+    overflow: hidden;
+}
+
+.add-post input, .add-post  select, .add-post  textarea {
+    padding: 3px;
+    margin: 5px 0;
+    font-size: 16px;
+    width: 100%;
+}
+
+.add-post input[type="submit"] {
+    width: 100px;
+    float: right;
+    background-color: black;
+    color: white;
+    border: 0;
+    padding: 10px;
+    cursor: pointer;
+}
+
+/* User Profile page Styling */
+
+.user-data {
+    margin: 10px auto;
+    width: 90%;
+}
+
+.user-data h1 {
+    font-size: 25px;
+}
+
+.user-data span {
+    font-size: 15px;
+    color: #888888;
+}
+
+.user-data p {
+    font-size: 15px;
+    margin: 10px 0;
+}
+
+.user-data hr {
+    border-color: #888888;
+    margin: 10px 0;
+}
+
+.user-data .blog-list {
+    width: 100%;
+}
+
+.user-data .edit-profile {
+    text-decoration: none;
+    color: white;
+    background-color: grey;
+    padding: 5px 10px;
+}
+
+.user-data .edit-profile:hover {
+    background-color: rgb(163, 163, 163);
+}
+
+/* Message styling */
+
+.message {
+    width: 100%;
+    color: white;
+    font-size: 16px;
+    padding: 5px 10px;
+}
+
+.message.error {
+    background-color: red;
+}
+
+.message.success {
+    background-color: green;
+}
+
+.message.info {
+    background-color: blue;
+}
+
+.message.warning{
+    background-color: goldenrod;
+}
+
+/* Delete post styling */
+
+.delete-post {
+    width: 50%;
+    margin: 30px auto;
+}
+
+.delete-post section {
+    margin: 15px 0;
+}
+
+.delete-btn {
+    background-color: black;
+    padding: 5px 5px;
+    margin: 10px 0;
+    margin-right: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.cancel-btn {
+    background-color: silver;
+    padding: 5px 5px;
+    margin: 10px 0;
+    color: black;
+    text-decoration: none;
+}
+
+/* Error Page styling */
+
+.error-page {
+    width: 60%;
+    margin: 50px auto;
+    border: 0.5px solid silver;
+    border-radius: 5px;
+    padding: 15px;
+}
+
+.error-page h4 {
+    padding: 10px 0;
+}
+
+.error-page div {
+    text-align: center;
+}
+
+.error-page ul li {
+    list-style:inside;
+}

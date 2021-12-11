@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' type='text/css' href="{% static 'style.css' %}">
+    <link rel='stylesheet' type='text/css' href="{% static 'mediaQuery.css' %}">
+    <script src="{% static 'style.js' %}" type='application/javascript'></script>
+    <title>{% block title %}{% endblock title %}</title>
+</head>
+<body>
+    <header>
+        <nav class='navbar'>
+            <h2 id="logo"><a href="{% url 'home' %}">dailyRead.com</a></h2>
+            <ul class=nav-menu>
+                <li><a href="{% url 'home' %}" class="{% block tabHome %}{% endblock tabHome %}">Home</a></li>
+                <li><a href="{% url 'categoryList' %}" class="{% block tabCategory %}{% endblock tabCategory %}">Categories</a></li>
+                
+                {% if not user.is_authenticated %}
+                
+                <li><a href="{% url 'loginPage' %}" class="{% block tabLogIn %}{% endblock tabLogIn %}">Log In</a></li>
+                <li><a href="{% url 'signUpPage' %}" class="{% block tabSignUp %}{% endblock tabSignUp %}">Sign Up</a></li>
+                
+                {% else %}
+                
+                <li><a href="{% url 'addPost' %}" class="{% block tabAddPost %}{% endblock tabAddPost %}">Add Post</a></li>
+                <li><a href="{% url 'userProfile' user %}" class="{% block tabProfile %}{% endblock tabProfile %}">{{user.first_name}} {{user.last_name}}</a></li>
+                <li><a href="{% url 'logOut' %}">Logout</a></li>
+                
+                {% endif %}
+
+            </ul>
+            <div class="menu-icon">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </nav>
+    </header>
+
+    {% for message in messages %}
+    <h6 class="message {{message.tags}}">{{message}}</h6>
+    {% endfor %}
+
+    {% block content %}
+    {% endblock content %}
+</body>
+</html>

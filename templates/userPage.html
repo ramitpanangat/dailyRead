@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block title %}{{profileuser.first_name}} {{profileuser.last_name}} | dailyRead.com{% endblock title %}
+
+{% block tabProfile %}active-tab{% endblock tabProfile %}
+
+{% block content %}
+{% load static %}
+
+<div class="user-data">
+    
+    <h1>{{profileuser.first_name}} {{profileuser.last_name}}</h1>
+    <span>@{{profileuser.username}}</span>
+    <br><br>
+        
+    {% if profileuser == user %}
+    
+    <a href="#" class="edit-profile">Edit Profile</a>
+
+    {% endif %}
+        
+    <hr>
+    <h4>Posts: </h4>
+
+    {% if blogs %}
+        {% for blog in blogs %}
+        <div class="blog-list">
+            <h3><a href="{% url 'articleView' blog.pk %}">{{ blog.title }}</a></h3>
+            <small><a href="{% url 'categoryView' blog.category %}">{{ blog.category }}</a> | {{ blog.date }}</small>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="no-data">
+            <h3>Sorry, this user haven't posted anything yet..</h3>
+            <img src="{% static 'opps.png' %}" alt="Opps">
+        </div>
+    {% endif %}
+</div>
+
+{% endblock content %}

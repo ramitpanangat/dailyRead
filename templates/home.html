@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}Home | dailyRead.com{% endblock title %}
+
+{% block tabHome %}active-tab{% endblock tabHome %}
+
+{% block content %}
+
+{% for post in posts %}
+    <div class="blog-list">
+        <h3><a href="{% url 'articleView' post.pk %}">{{ post.title }}</a></h3>
+        <small><a href="{% url 'categoryView' post.category %}">{{ post.category }}</a> | <a href="{% url 'userProfile' post.author %}">{{ post.author.first_name }} {{post.author.last_name}}</a> | {{ post.date }}</small>
+    </div>
+{% endfor %}
+
+{% endblock content %}

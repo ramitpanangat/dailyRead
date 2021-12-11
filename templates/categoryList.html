@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Categories | dailyRead.com{% endblock title %}
+
+{% block tabCategory %}active-tab{% endblock tabCategory %}
+
+{% block content %}
+
+<div class="category-table">
+    {% for category in categories %}
+
+    <div class="category-tile">
+        <a href="{% url 'categoryView' category.title %}">{{category.title}}</a>
+    </div>
+
+    {% endfor %}
+</div>
+
+{% endblock content %}

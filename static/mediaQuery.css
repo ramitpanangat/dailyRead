@@ -1,0 +1,92 @@
+/* Stylesheet for media query */
+
+@media(max-width:768px) {
+
+    /* Navbar menu */
+
+    .menu-icon {
+        display: block;
+    }
+
+    .menu-icon.activeMenu span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-icon.activeMenu span:nth-child(1) {
+        transform: translateY(6px) rotate(45deg);
+    }
+
+    .menu-icon.activeMenu span:nth-child(3) {
+        transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .navbar .nav-menu {
+        position: fixed;
+        flex-direction: column;
+        background-color: black;
+        transition: 0.8s;
+        top: 36px;
+        right: -100%;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+        gap: 5px;
+    }
+    .nav-menu.activeMenu {
+        right: 0;
+    }
+    /* Article Page */
+
+    .article-container {
+        margin: 10px 20px;
+    }
+
+    /* Category List page */
+
+    .category-table {
+        width: 80%;
+    }
+
+    .category-tile a {
+        font-size: 20px;
+    }
+
+    /* Log-In/Sign-up Page */
+
+    .loginForm, .signUpForm {
+        width: 85%;
+    }
+
+    .signUpForm input[type='submit'] {
+        width: 90%;
+    }
+
+    /* Add Post Page */
+
+    .add-post {
+        width: 100%;
+        border: 0;
+    }
+
+    /* Blog list and title styling */
+
+    .blog-list {
+        width: 90%;
+    }
+
+    .category-title {
+        width: 90%;
+    }
+
+    /* Delete Page Styling */
+
+    .delete-post {
+        width: 90%;
+    }
+
+    /* Error Page styling */
+    .error-page {
+        width: 80%;
+        font-size: 12px;
+    }
+}

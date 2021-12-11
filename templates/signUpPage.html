@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}Sign Up | dailyRead.com{% endblock title %}
+
+{% block tabSignUp %}active-tab{% endblock tabSignUp %}
+
+{% block content %}
+
+<div class="signUpForm">
+    <h3>Sign Up</h3>
+    <form action="{% url 'signedUp' %}" method="post">
+        {% csrf_token %}
+        <input type="text" name="fname" id="fname" placeholder="First Name">
+        <input type="text" name="lname" id="lname" placeholder="Last Name"><br>
+        <input type="text" name="username" id="username" placeholder="Username"><br>
+        <input type="email" name="email" id="email" placeholder="Email"><br>
+        <input type="password" name="password" id="password" placeholder="Password"><br>
+        <input type="password" name="cpassword" id="cpassword" placeholder="Confirm Password"><br>
+        <input type="submit" value="Sign Up" class="submit">
+    </form>
+    <small>Already have an account? <a href="{% url 'loginPage' %}">Log In</a></small>
+</div>
+
+{% endblock content %}
